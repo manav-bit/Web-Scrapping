@@ -31,20 +31,22 @@ function singlematchdata(html){
         console.log(teamname);
         //ke basis pr split krakar team name me dadia uska 0th element
         //**********/to get player data
+        teamname=teamname.trim();
+        console.log(teamname);
         let batsmanbodyallrows=searchTool(bothinningdata[i]).find(".table.batsman tbody tr");
         console.log(batsmanbodyallrows.length)
         // type cohersion loop-> 
         for(let j=0;j<batsmanbodyallrows.length;j++){
-            let numberoftds=searchTool(batsmanbodyallrows[i]).find("tr");
-            console.log(numberoftds);
+            let numberoftds=searchTool(batsmanbodyallrows[j]).find("td");
+            console.log(numberoftds.length);
             if(numberoftds.length==8){
-//                 //u are valid
+                //u are valid
 let playerNAme=searchTool(numberoftds[0]).text();
 console.log(playerNAme);
             }
         }
         console.log("after")
-        fs.writeFileSync(`inning${i+1}`,scoreCard)
+        fs.writeFileSync(`inning${i+1}.html`,scoreCard)
     }
    
 
