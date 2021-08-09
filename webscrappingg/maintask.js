@@ -49,6 +49,6 @@ function dataExtractor(html) {
             console.log(fullAllmatchPageLink);//this contains exact links to score card of every match
             objforscorecard.processSingleMatch(fullAllmatchPageLink)
         }
-        console.log("**********");
+        console.log("*********");
     }
 
